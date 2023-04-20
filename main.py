@@ -245,10 +245,15 @@ async def join_game(ctx,game_id):
 async def valid_cards_procedures(interaction: discord.Interaction, card_name: str) -> List[app_commands.Choice[str]]:
 	global procedures
 	global hands
+	global players
 	
 	game_id = find_game_id(interaction.user.id)
 	if not game_id:
 		print("Not in a game")
+		return []
+	
+	player_index = players[game_id].index(interaction.user)
+	if player_index == 0:
 		return []
 	
 	hand = []
@@ -261,10 +266,15 @@ async def valid_cards_procedures(interaction: discord.Interaction, card_name: st
 
 async def valid_cards_c2(interaction: discord.Interaction, card_name: str) -> List[app_commands.Choice[str]]:
 	global c2_and_exfil_card
+	global players
 	
 	game_id = find_game_id(interaction.user.id)
 	if not game_id:
 		print("Not in a game")
+		return []
+	
+	player_index = players[game_id].index(interaction.user)
+	if player_index != 0:
 		return []
 	
 	validCards = [c2_and_exfil_card[game_id]]
@@ -273,10 +283,15 @@ async def valid_cards_c2(interaction: discord.Interaction, card_name: str) -> Li
 
 async def valid_cards_persistence(interaction: discord.Interaction, card_name: str) -> List[app_commands.Choice[str]]:
 	global persistence_card
+	global players
 	
 	game_id = find_game_id(interaction.user.id)
 	if not game_id:
 		print("Not in a game")
+		return []
+	
+	player_index = players[game_id].index(interaction.user)
+	if player_index != 0:
 		return []
 	
 	validCards = [persistence_card[game_id]]
@@ -285,10 +300,15 @@ async def valid_cards_persistence(interaction: discord.Interaction, card_name: s
 
 async def valid_cards_pivot(interaction: discord.Interaction, card_name: str) -> List[app_commands.Choice[str]]:
 	global pivot_and_escalate_card
+	global players
 	
 	game_id = find_game_id(interaction.user.id)
 	if not game_id:
 		print("Not in a game")
+		return []
+	
+	player_index = players[game_id].index(interaction.user)
+	if player_index != 0:
 		return []
 	
 	validCards = [pivot_and_escalate_card[game_id]]
@@ -547,6 +567,38 @@ async def play_c2(ctx, card_name: str):
 	
 	await ctx.reply(embed=discord.Embed(title="Backdoors and Breaches",description="Card played"))
 
+@bot.hybrid_command(name="pass", description="Passes a turn, do nothing")
+async def pass_turn(ctx):
+	global incident_master_card, turn, players, game_ended, incident_master, hands, c2_and_exfil_card, c2_played
+	
+	game_id = find_game_id(ctx.author.id)
+	if not game_id:
+		return await ctx.reply("You are not in a game.")
+	
+	if game_ended[game_id]:
+		return await ctx.reply("No game running")
+
+	# Find the current player's index
+	player_index = players[game_id].index(ctx.author)
+
+	##if player_index != 0:
+		#return await ctx.reply("You are not incident master")
+
+	# Check that the player sent a valid command to pass a turn
+	if ctx.author != players[game_id][turn[game_id]]:
+		await ctx.reply("It's not your turn!")
+		return
+	
+	# Check if the game has ended
+	turn[game_id] = (turn[game_id] + 1) % len(players[game_id])
+	if turn[game_id] > 10:
+		game_ended[game_id] = True
+
+	if game_ended[game_id]:
+		await end_game(ctx,game_id)
+		return
+	
+	await ctx.reply(embed=discord.Embed(title="Backdoors and Breaches",description="Turn passed"))
 
 @bot.hybrid_command(name="play-persistence", description="Starts Persistence phase, eliminate hidden backdoor.")
 @app_commands.autocomplete(card_name=valid_cards_persistence)
