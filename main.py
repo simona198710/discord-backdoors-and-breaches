@@ -90,9 +90,8 @@ async def setup_game(ctx):
     global turn, players, procedures, incident_master, incident_master_names, c2_and_exfil, persistence, injects, pivot_and_escalate, incident_master_card, game_ended, hands, c2_and_exfil_card, persistence_card, pivot_and_escalate_card, inital_played
     await ctx.defer()
     
-    if str(ctx.channel.id) != str(config.config["SETTINGS"]["channel_id"].strip()):
-        if str(ctx.channel.id) != str(os.environ.get("CHANNEL_ID")):
-            return await ctx.reply("This command can only be used in the designated game channel.")
+    if str(ctx.channel.id) != str(config.channel_id):
+        return await ctx.reply("This command can only be used in the designated game channel.")
     
     game_id = find_game_id(ctx.author.id)
     if game_id:
@@ -184,9 +183,8 @@ async def start_game(ctx):
     
     await ctx.defer()
     
-    if str(ctx.channel.id) != str(config.config["SETTINGS"]["channel_id"].strip()):
-        if str(ctx.channel.id) != str(os.environ.get("CHANNEL_ID")):
-            return await ctx.reply("This command can only be used in the designated game channel.")
+    if str(ctx.channel.id) != str(config.channel_id):
+        return await ctx.reply("This command can only be used in the designated game channel.")
     
     game_id = find_game_id(ctx.author.id)
     if not game_id:
@@ -265,7 +263,7 @@ async def start_game(ctx):
     '''
     turn[game_id] = (turn[game_id] + 1) % len(players[game_id])
     await ctx.reply(embed=discord.Embed(title="Backdoors and Breaches",description=f"Your hand: {master_cards_to_send}"),ephemeral=True)
-    channel=bot.get_channel(int(config.config["SETTINGS"]["channel_id"].strip()))
+    channel=bot.get_channel(int(config.channel_id))
     await generate_cards_embed(channel,game_id)
     
 async def get_joinable_games(interaction: discord.Interaction, games: str) -> List[app_commands.Choice[str]]:
@@ -282,9 +280,8 @@ async def join_game(ctx,game_id):
     if not game_id in players:
         return await ctx.reply("Invalid game id.")
     
-    if str(ctx.channel.id) != str(config.config["SETTINGS"]["channel_id"].strip()):
-        if str(ctx.channel.id) != str(os.environ.get("CHANNEL_ID")):
-            return await ctx.reply("This command can only be used in the designated game channel.")
+    if str(ctx.channel.id) != str(config.channel_id):
+        return await ctx.reply("This command can only be used in the designated game channel.")
 
     if ctx.author not in players[game_id]:
         players[game_id].append(ctx.author)
@@ -441,9 +438,8 @@ async def play_procedure(ctx, card_name: str):
         await ctx.reply("It's not your turn!")
         return
 
-    if str(ctx.channel.id) != str(config.config["SETTINGS"]["channel_id"].strip()):
-        if str(ctx.channel.id) != str(os.environ.get("CHANNEL_ID")):
-            return await ctx.reply("This command can only be used in the designated game channel.")
+    if str(ctx.channel.id) != str(config.channel_id):
+        return await ctx.reply("This command can only be used in the designated game channel.")
 
     # Find the current player's hand and incident master card
     player_index = players[game_id].index(player)
@@ -778,9 +774,8 @@ async def end_game(ctx,game_id=None):
             return await ctx.reply("Invalid game id.")
     
     if ctx:
-        if str(ctx.channel.id) != str(config.config["SETTINGS"]["channel_id"].strip()):
-            if str(ctx.channel.id) != str(os.environ.get("CHANNEL_ID")):
-                return await ctx.reply("This command can only be used in the designated game channel.")
+        if str(ctx.channel.id) != str(config.channel_id):
+            return await ctx.reply("This command can only be used in the designated game channel.")
     
     if ctx:
         if not players[game_id][0] == ctx.author:
