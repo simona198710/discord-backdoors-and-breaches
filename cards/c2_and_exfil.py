@@ -9,7 +9,7 @@ C2 = [
             "User Awareness Training",
         ],
         "tools": ["USB drive/socks and a dream... a dream of evil."],
-        "documentation": "https://attack.mitre.org/techniques/T1052",
+        "documentation": "https://attack.mitre.org/techniques/T1052"
     },
     {
         "Title": "GMAIL, TUMBLR, SALESFORCE, TWITTER AS C2",
@@ -20,12 +20,14 @@ C2 = [
             "https://github.com/byt3b|33d3r/gcat",
             "https://github.com/DakotaNelson/sneaky-creeper",
         ],
+        "Image":"https://i.imgur.com/2V2ipjz.png"
     },
     {
         "Title": "WINDOWS BACKGROUND INTELLIGENT TRANSFER SERVICE (BITS)",
         "Description": "The attackers use BITS, another protocol that is often ignored.",
         "Detection": ["NetFlow", "Zeek/Bro", "RITA Analysis"],
         "documentation": "https://www.blackhillsinfosec.com/bypassing-cylance-part-2-using-dnscat2",
+        "Image":"https://i.imgur.com/Q6hVWbD.png"
     },
     {
         "Title": "DNS AS C2",
@@ -33,6 +35,7 @@ C2 = [
         "Detection": ["NetFlow", "Zeek/Bro", "RITA Analysis"],
         "tools": ["dnscat2"],
         "documentation": "https://github.com/deruke/tools",
+        "Image":"https://i.imgur.com/U6pUGB7.png"
     },
     {
         "Title": "DOMAIN FRONTING AS C2",
@@ -43,6 +46,7 @@ C2 = [
             "https://www.cobaltstrike.com",
             "https://www.blackhillsinfosec.com/bypass-web-proxy-filtering",
         ],
+        "Image":"https://i.imgur.com/vxdXpfR.png"
     },
     {
         "Title": "HTTP AS EXFIL",
@@ -53,5 +57,6 @@ C2 = [
             "https://www.blackhillsinfosec.com/504-vsagent-usage-instructions",
             "https://github.com/Project-Prismatica/Prismatica",
         ],
+        "Image":"https://i.imgur.com/FQJUSvV.png"
     },
 ]

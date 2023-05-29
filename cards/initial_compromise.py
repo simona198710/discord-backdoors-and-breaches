@@ -44,7 +44,7 @@ initial_compromise = [
             "Entity Behavior Analytics (UEBA)",
         ],
         "Tools": "Shodan Nmap Masscan Metasploit Crowbar",
-        "Documentation": "https://github.com/galkan/crowbar",
+        "Documentation": "https://github.com/galkan/crowbar"
     },
     {
         "Title": "INSIDER THREAT",
@@ -52,6 +52,7 @@ initial_compromise = [
         "Detection": ["User and Entity Behavior Analytics", "DLP", "Working with HR"],
         "Tools": "Being considered a Full Time Expenditure (FTE) Long Hours Addiction",
         "Documentation": "https://americanaddictioncenters.org",
+        "Image":"https://i.imgur.com/9ynN9si.png"
     },
     {
         "Title": "PASSWORD SPRAY",
@@ -63,6 +64,7 @@ initial_compromise = [
         ],
         "Tools": "SprayingToolkit FireProx Hydra DomainPasswordSpray",
         "Documentation": "https://github.com/byt3b|33d3r/SprayingToolkit https://github.com/ustayready/fireprox https://github.com/dafthack/DomainPasswordSpray",
+        "Image":"https://i.imgur.com/Hqk8iA1.png"
     },
     {
         "Title": "PHISH",
@@ -70,6 +72,7 @@ initial_compromise = [
         "Detection": ["Firewall Log Review", "Endpoint Security Protection Analysis"],
         "Tools": "evilginx GoPhish CredSniper",
         "Documentation": "https://www.blackhillsinfosec.com/how-to-phish-for-geniuses https://www.blackhillsinfosec.com/offensive-spf-how-to- automate-anti-phishing-reconnaissance-using-sender-policy-framework",
+        "Image":"https://i.imgur.com/CaMqgLf.png"
     },
     {
         "Title": "SOCIAL ENGINEERING",
@@ -80,6 +83,7 @@ initial_compromise = [
         ],
         "Tools": "Phone A goal and a dream of evil People trusting people",
         "Documentation": "https://youtu.be/rnmcRTnTNC8 https://youtu.be/FvhkkwHjUVg",
+        "Image":"https://i.imgur.com/xkxTI9r.png"
     },
     {
         "Title": "WEB SERVER COMPROMISE",
@@ -91,5 +95,6 @@ initial_compromise = [
         ],
         "Tools": "Zed Attack Proxy sqlmap Burp Proxy",
         "Documentation": "https://www.zaproxy.org https://portswigger.net/burp https://www.blackhillsinfosec.com/using-simple-burp-macros-to-automate-testing",
+        "Image":"https://i.imgur.com/EDrfaFq.png"
     },
 ]

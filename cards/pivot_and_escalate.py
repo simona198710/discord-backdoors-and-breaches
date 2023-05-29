@@ -8,6 +8,7 @@ pivot_and_escalate = [
             "https://github.com/dafthack/DomainPasswordSpray",
             "https://www.blackhillsinfosec.com/webcast-attack-tactics-5-zero-to-hero-attack",
         ],
+        "Image":"https://i.imgur.com/B7XI4Bl.png"
     },
     {
         "Title": "KERBEROASTING",
@@ -23,6 +24,7 @@ pivot_and_escalate = [
             "https://www.blackhillsinfosec.com/running-hashcat-on-ubuntu-18-04-server-with-1080ti",
             "https://github.com/SecureAuthCorp/impacket/blob/master/examples/GetUserSPNs.py",
         ],
+        "Image":"https://i.imgur.com/8pZYdAk.png"
     },
     {
         "Title": "WEAPONIZING ACTIVE DIRECTORY",
@@ -39,6 +41,7 @@ pivot_and_escalate = [
             "https://github.com/byt3bl33d3r/CrackMapExec",
             "https://www.blackhillsinfosec.com/webcast-weaponizing-active-directory",
         ],
+        "Image":"https://i.imgur.com/LmyFSps.png"
     },
     {
         "Title": "CREDENTIAL STUFFING",
@@ -59,6 +62,7 @@ pivot_and_escalate = [
             "https://www.blackhillsinfosec.com/domain-goodness-learned-love-ad-explorer",
             "https://www.blackhillsinfosec.com/abusing-exchange-mailbox-permissions-mailsniper",
         ],
+        "Image":"https://i.imgur.com/CzABTOK.png"
     },
     {
         "Title": "NEW SERVICE CREATION",
@@ -66,6 +70,7 @@ pivot_and_escalate = [
         "Detection": ["Endpoint Analysis", "Endpoint Security Protection Analysis"],
         "tools": ["Metasploit getsystem and other Post-Exploitation Scripts"],
         "documentation": "https://www.metasploit.com",
+        "Image":"https://i.imgur.com/SRCZbxX.png"
     },
     {
         "Title": "LOCAL PRIVILEGE ESCALATION",
@@ -73,6 +78,7 @@ pivot_and_escalate = [
         "Detection": ["Endpoint Analysis", "Endpoint Security Protection Analysis"],
         "tools": ["PowerSploit's PowerUp", "Meterpreter Post-Exploitation Scripts"],
         "documentation": "https://www.blackhillsinfosec.com/powershell-without-powershell-how-to-bypass-application-whitelisting-environment-restrictions-av",
+        "Image":"https://i.imgur.com/1ykq5i0.png"
     },
     {
         "Title": "BROADCAST/MULTICAST PROTOCOL POISONING",
@@ -87,5 +93,6 @@ pivot_and_escalate = [
             "https://github.com/Igandx/Responder",
             "https://www.blackhillsinfosec.com/how-to-disable-Ilmnr-why-you-want-to",
         ],
+        "Image":"https://i.imgur.com/n3u0Qw0.png"
     },
 ]

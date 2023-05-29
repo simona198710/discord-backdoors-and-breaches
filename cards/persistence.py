@@ -10,6 +10,7 @@ Persistence = [
             "SILENTTRINITY",
         ],
         "documentation": "https://github.com/byt3b133d3r/SILENTTRINITY",
+        "Image":"https://i.imgur.com/ur2YVfm.png"
     },
     {
         "Title": "DLL ATTACKS",
@@ -17,6 +18,7 @@ Persistence = [
         "Detection": ["Endpoint Security Protection Analysis", "Endpoint Analysis"],
         "tools": ["PowerSploit", "InvisiMole"],
         "documentation": "https://www.blackhillsinfosec.com/digging-deeper-vulnerable-windows-services",
+        "Image":"https://i.imgur.com/1SumJg6.png"
     },
     {
         "Title": "MALICIOUS DRIVER",
@@ -24,6 +26,7 @@ Persistence = [
         "Detection": ["Endpoint Security Protection Analysis", "Endpoint Analysis"],
         "tools": ["Pasam", "ROCKBOOT", "Wingbird", "Alureon", "SeaDuke"],
         "documentation": "https://en.wikipedia.org/wiki/Alureon",
+        "Image":"https://i.imgur.com/MA9zX4r.png"
     },
     {
         "Title": "ADDING NEW USER",
@@ -34,6 +37,7 @@ Persistence = [
             "https://www.metasploit.com",
             "https://www.cobaltstrike.com",
         ],
+        "Image":"https://i.imgur.com/d3EUnHu.png"
     },
     {
         "Title": "APPLICATION SHIMMING",
@@ -44,6 +48,7 @@ Persistence = [
             "https://docs.microsoft.com/en-us/windows-hardware/get-started/adk-install",
             "https://attack.mitre.org/techniques/T1138",
         ],
+        "Image":"https://i.imgur.com/9aAAfF3.png"
     },
     {
         "Title": "MALICIOUS BROWSER PLUGINS",
@@ -59,6 +64,7 @@ Persistence = [
             "https://www.kaspersky.com/blog/browser-extensions-security/20886",
             "https://github.com/graniet/chromebackdoor",
         ],
+        "Image":"https://i.imgur.com/aLP19vJ.png"
     },
     {
         "Title": "LOGON SCRIPTS",
@@ -66,6 +72,7 @@ Persistence = [
         "Detection": ["Endpoint Security Protection Analysis", "Endpoint Analysis"],
         "tools": ["Meterpreter Persistence"],
         "documentation": "https://www.metasploit.com",
+        "Image":"https://i.imgur.com/CIrbmjS.png"
     },
     {
         "Title": "EVIL FIRMWARE",
@@ -77,6 +84,7 @@ Persistence = [
         ],
         "tools": ["Hacking Team UEFI Rootkit", "BadBIOS (... maybe.)"],
         "documentation": "https://threatpost.com/uefi-rootkit-sednit/140420",
+        "Image":"https://i.imgur.com/AdXTyDG.png"
     },
     {
         "Title": "ACCESSIBILITY FEATURES",
@@ -84,5 +92,6 @@ Persistence = [
         "Detection": ["Endpoint Analysis", "Endpoint Security Protection Analysis"],
         "tools": ["Bash Bunny", "USB Rubber Ducky"],
         "documentation": "https://shop.hak5.org",
+        "Image":"https://i.imgur.com/ZebIBns.png"
     },
 ]
